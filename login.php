@@ -20,8 +20,8 @@ if(isset($_POST['userName']) && isset($_POST['password'])){
     }else{
 
         $response['error'] = TRUE;
-        $response['error_msg'] = "Login Credentials are wrong, pls try again";
-
+        $response['error_msg'] = "Invalid Credential for Login
+Please enter valid User ID and Password";
     }
     echo json_encode($response);
 

@@ -142,7 +142,7 @@ class DB_FUNCTIONS{
 
     public function load_events()
     {
-        $stmt = $this->conn->prepare("SELECT Id, SubEventTitle FROM `eventdetails` WHERE Id != 7");
+        $stmt = $this->conn->prepare("SELECT Id, SubEventTitle FROM `eventdetails` WHERE Id != 1");
         $stmt->execute();
         $result = $stmt->get_result();
         $events = array();

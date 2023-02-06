@@ -10,12 +10,12 @@ if (isset($_POST['submit'])) {
 
     if ($eventsList) {
         $response['error'] = FALSE;
-        $response['eventDetId'] = array();
+        $response['eventList'] = array();
         foreach ($eventsList as $event) {
             $temp = array();
             $temp['eventId'] = $event['Id'];
-            $temp['SubEventTitle'] = $event['SubEventTitle'];
-            $response['eventDetId'][] = $temp;
+            $temp['subEventTitle'] = $event['SubEventTitle'];
+            $response['eventList'][] = $temp;
         }
     } else {
         $response['error'] = TRUE;

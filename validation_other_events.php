@@ -16,7 +16,7 @@ if(isset($_POST['barcode'])){
         $response['registrationIdForOE']['registrationId'] = $registrationIdForOE['ID'];
     }else{
         $response['error'] = TRUE;
-        $response['error_msg'] = "Coupon is not valid for Entry";
+        $response['error_msg'] = "This is not a paid registered coupon";
     }
     echo json_encode($response);
 }else{

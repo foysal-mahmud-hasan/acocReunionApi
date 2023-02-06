@@ -17,7 +17,7 @@ if(isset($_POST['barcode'])){
         $response['registrationdetails']['isCadet'] = $registrationdetails['IsCadet'];
     }else{
         $response['error'] = TRUE;
-        $response['error_msg'] = "Coupon is not valid for registration";
+        $response['error_msg'] = "This is not a paid registered coupon";
     }
     echo json_encode($response);
 }else{
