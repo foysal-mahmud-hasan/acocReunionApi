@@ -5,7 +5,8 @@ $db = new DB_FUNCTIONS();
 
 $response = array("error"=>FALSE);
 
-if(isset($_POST['barcode']) && $_POST['eventDetId'] && $_POST['registrationId'] && $_POST['entryBy']){
+//for error checking every post
+if(isset($_POST['barcode']) && isset($_POST['eventDetId']) && isset($_POST['registrationId']) && isset($_POST['entryBy'])){
 
     $barcode = $_POST['barcode'];
     $eventDetId = $_POST['eventDetId'];
