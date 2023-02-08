@@ -24,6 +24,6 @@ if (isset($_POST['submit'])) {
     echo json_encode($response);
 } else {
     $response['error'] = TRUE;
-    $response['error_msg'] = "Data not submitted";
+    $response['error_msg'] = "submit not posted";
     echo json_encode($response);
 }

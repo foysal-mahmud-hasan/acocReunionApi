@@ -6,7 +6,7 @@ $db = new DB_FUNCTIONS();
 
 $response = array("error" => FALSE);
 
-if (isset($_POST['barcode']) && $_POST['eventDetId']) {
+if (isset($_POST['barcode']) && isset($_POST['eventDetId'])) {
 
     $barcode = $_POST['barcode'];
     $eventDetId = $_POST['eventDetId'];
@@ -23,6 +23,6 @@ if (isset($_POST['barcode']) && $_POST['eventDetId']) {
     echo json_encode($response);
 } else {
     $response['error'] = TRUE;
-    $response['error_msg'] = "Submit all fields";
+    $response['error_msg'] = "Submit all fields i.e. barcode and eventId";
     echo json_encode($response);
 }

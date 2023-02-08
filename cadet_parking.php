@@ -26,7 +26,7 @@ if(isset($_POST['barcode'])) {
     echo json_encode($response);
 } else {
     $response['error'] = TRUE;
-    $response['error_msg'] = "Data not submitted";
+    $response['error_msg'] = "Submit all fields i.e. barcode";
     echo json_encode($response);
 
 }
