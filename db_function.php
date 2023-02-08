@@ -117,6 +117,29 @@ class DB_FUNCTIONS{
         }
 
     }
+
+    public function check_relation($barcode){
+
+        $stmt = $this->conn->prepare("select rd.IsCadet, cadet.CadetName, cadet.CadetNo,  rd.RelationWithCadet from registrationdetails as rd inner join cadetregistration as cr on rd.RegistrationId = cr.Id and cr.RegStatus = 'Paid' inner join cadet on rd.CadetId = cadet.Id where rd.CouponNo = ? and cr.RegCategory != 'Souvenir'");
+        $stmt->bind_param('s', $barcode);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows>0){
+
+            $relation = $result->fetch_assoc();
+            $stmt->close();
+
+            return $relation;
+
+        }else{
+            return null;
+        }
+
+
+    }
+
+
     function getCadetParking($barcode) {
 
         $stmt = $this->conn->prepare("SELECT rp.ParkingNo FROM registrationdetails as rd 
